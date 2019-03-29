@@ -1,0 +1,172 @@
+/*=========== RESET ==============*/
+
+*                {margin: 0; padding: 0; font-size: 100%; border: none; outline: none; font-weight: 300; box-sizing: border-box;
+	             font-family: 'Lato', sans-serif;}
+a                {text-decoration: none;}
+ul               {list-style: none;}
+img              {max-width: 100%;}
+header           {position: fixed; width: 100%; background: #fafafa; z-index: 3;}
+article          {background-color: #F5F5F5;}
+
+/*=========== CONTAINER ==========*/
+
+.container       {width: 100%; float: left; padding: 1% 2%; text-align: center;}
+.cima            {background-color: #fafafa; text-align: center; width: 100%; height: 65px; float: left; font-size: 2.5em; padding-top: 10px;}
+.copia           {margin-top: 50PX;}
+
+/*=========== BG COLORS ==========*/
+
+.bg-gradient     {background: linear-gradient(to right,black,gray);}
+.bg-black        {background-color: #130400;}
+.bg-white        {background-color: #fafafa;}
+
+/*=========== HELPERS ============*/
+
+.radius          {border-radius: 7px;}
+
+/* ========== CABEÇALHO===========*/
+ 
+.logo            {width: 90px; height: 95px; float: left; background: url(../img/arte.png) center center/90px no-repeat; font-size: 0;}
+.btn-menu        {width: 50px; height: 50px; float: right; text-align: center; color: #fff; border-radius:50px; cursor: pointer;}
+
+/*=========== MENU ===============*/
+
+.menu            {display:none; width: 100%; height: 100%; position: fixed; background-color: rgba(0,0,0,0.9); top: 0; left: 0;}
+.btn-close       {font-size: 1.5em; color: #fff; float: right; cursor: pointer; margin: 2% 3% 0 0;}
+.menu ul         {width: 100%; float: left; text-align: center;}
+.menu li         {padding: 1.5%;}
+.menu li a       {font-size: 2em; color: #fff; padding: 1.5% 3%;}
+.menu li a:hover {border:1px solid blue;}
+
+/* BANNER */
+
+.banner          {background: url(../img/bac.jpg) no-repeat fixed; height: 665px;margin-top: 124px;}
+.title           {width: 100%;}
+.title h2        {font-size: 2.5em; color: #fff; font-weight: 700;}
+.title h3        {font-size: 1.5em; color: #fff;}
+.buttons         {width: 100%; margin-top: 2%;}
+.buttons i       {float: right;}
+.btn             {width: 100%; font-size: 1.5em; text-align: left; cursor: pointer; padding: 5%;}
+.btn-cadastrar   {color: #130400; margin-top: 15%}
+
+/* SERVIÇOS */
+.um              {background-color: #fafafa;}
+.servico         {width: 100%; text-align: left; margin-bottom: 3%;}
+.servico img     {border-radius: 7px 7px 0 0;}
+.fica            {position: relative;}
+.inner           {padding: 7%;}
+.inner a         {font-size: 1.5em; color: black; font-weight: 700;}
+.inner h4        {font-size: 1.2em; color: gray; margin-top: 2%;}
+.inner p         {margin-top: 6%; color: black; line-height: 1.5em;}
+
+/*============= CAROUSEL ==============*/
+
+.swiper-container    {width: 90%; height: 600px; margin-top: 0px; position: relative; background: #fafafa;}
+.swiper-slide        {text-align: center; font-size: 18px; background: #fff; display: -webkit-box; display: -ms-flexbox; display: -webkit-flex;
+      	             display: flex; -webkit-justify-content: center; justify-content: center; -webkit-align-items: center; align-items: center;
+		             background: blue;   z-index: 2; position: relative;}
+.swiper-button-next  {margin-top: 710px;margin-right: 10px; z-index: 2;}
+.swiper-button-prev  {margin-top: 710px;margin-left: 10px;  z-index: 2;}
+.swiper-pagination   {margin-left: 50%; z-index: 2;}
+
+/* CONTATOS */
+.pe                                {width: 100%; height: 80px; background-color: #fafafa; float: left; text-align: center;}
+.final                             {width: 100%; height: 280px; background: #fafafa; padding-left: 250px; float: left; margin-top: 0px;}
+.final .caixa                      {position: relative; width:calc(300px - 30px); height:calc(250px - 30px); background: #000; float: left; 
+	                               margin:15px; box-sizing: border-box; overflow: hidden; border-radius:  10px; opacity: 0.8;}
+.final .caixa .icone1              {position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,1,0,0.9); transition: 0.5s; 
+	                               z-index: 1;}
+.final .caixa:hover .icone1        {top: 20px; left: calc(50% - 40px); width: 80px; height: 80px; border-radius: 50%;}
+.final .caixa .icone1 .fas         {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 80px; transition: 0.5s; 
+	                               color: #fff;}
+.final .caixa:hover .icone1 .fas   {font-size: 60px;}
+.final .caixa .endereco            {position: absolute; top: 100%; height: calc(100% - 100px);text-align: center; padding: 10px; 
+	                               box-sizing: border-box; transition: 0.5s; opacity: 0;}
+.final .caixa:hover .endereco      {top: 100px; opacity: 1;}
+.final .caixa .endereco h3         {margin: 0; padding: 0; font-size: 24px; color: aliceblue;}
+.final .caixa .endereco p          {margin: 0; padding: 0; color: aliceblue;}
+.final .caixa:nth-child(1) .icone1 {background: #319635;}
+.final .caixa:nth-child(1) .icone1 {background: #4caf50;}
+.final .caixa:nth-child(2) .icone1 {background: #d03852;}
+.final .caixa:nth-child(2) .icone1 {background: #f54975;}
+.final .caixa:nth-child(3) .icone1 {background: #23798e;}
+.final .caixa:nth-child(3) .icone1 {background: #328fa5;}
+.social-icons a                    {font-size: 3em; color: dodgerblue; margin-right: 3%;}
+.social-icons a:last-child         {margin-right: 0;}
+.social-icons a:hover              {color: rgb(255,255,255);}
+.copyright                         {color: rgba(255, 255, 255, 0.7); margin-top:0.01%;}
+
+/* QUEM SOMOS */
+
+.quemsomos            {background-color: #fafafa; width: 100%;height: 615px;float: right;font-size: 1.2em;}
+.missao               {width: 30%; float: left; background-color: cadetblue; height: 300px; margin-top: 60px; border-radius: 40% 0 40% 0;}
+.visao                {width: 30%; float: left; background-color: darkkhaki; height: 300px; margin-top: 60px; border-radius: 40% 0 40% 0;}
+.valores              {width: 30%; float: left; background-color: darkslategrey; height: 300px; margin-top: 60px; border-radius: 40% 0 40% 0;}
+.apresentacao         {padding-top: 70px;}
+
+/* PARCEIROS */
+
+.servico1             {width: 100%; text-align: left; margin-bottom: 3%; background-color: #F5F5F5; margin-left: 1%;}
+.servico1:last-child  {margin-right: 0;}
+.servico1 img         { }
+
+/* NEWSLETTER */
+
+.newsletter h2        {font-size: 1.5em; color: #fff; font-weight: 700;}
+.newsletter h3        {color: #fff;}
+.newsletter form      {margin-top: 2%;}
+.newsletter input     {width: 100%;  color: #fff; border: 1px solid rgba(255,255,255,0.3); padding: 5%; }
+.newsletter button    {width: 100%;  color:#130400; padding: 5%; cursor: pointer; margin-top: 2%; }
+
+/* ========== MOBILE FIRST ==========*/
+
+/* SMALL DEVICES - SMARTPHONES */
+
+@media screen and (min-width: 480px)  {
+.logo                                 {width: 250px; background: url(../img/nplogo.png) center center/250px no-repeat;}
+.btn                                  {font-size: 2em;}
+                                      }
+
+/* SMALL DEVICES - TABLETS*/
+
+@media screen and (min-width: 768px)  {
+.servico                              {width: 49%; float: left; margin-right: 2%;}
+.servico:nth-child(2)                 {margin-right: 0;}  
+.servico1                             {width: 25%; float: left; margin-right: 1%;}
+.newsletter h2                        {font-size: 2em;}
+.newsletter h3                        {font-size: 1.5em;}
+.newsletter input                     {width: 70%; padding: 2%; float: left; margin-right: 1%;}
+.newsletter button                    {width: 29%; padding: 2%; float: right; margin-top: 0;}
+                                      }
+
+/* MEDIUM DEVICES - TABLETS & DESKTOPS*/
+
+@media screen and (min-width: 960px)  {
+.title                                {width: 70%; float: left; text-align: left;}
+.title h2                             {font-size: 3em;}
+.title h3                             {font-size: 2em;}
+.buttons                              {width: 30%; float: right; margin-top: 0;}
+.servico                              {width: 32%;}
+.servico:nth-child(2)                 {margin-right: 2%;}
+.servico:nth-child(3)                 {margin-right: 0;}
+.servico:nth-child(6)                 {margin-right: 0;}
+.servico1                             {width: 23%;}    
+.servico1:nth-child(2)                {margin-right: 1%;} 
+.newsletter input                     {width: 60%; float: none;}
+.newsletter button                    {width: 20%; float: none;}
+                                      }
+
+/* LARGE DEVICES - WIDE SCREENS*/
+
+@media screen and (min-width: 1280px) {
+.btn-menu                             {display: none;}
+.btn-close                            {display: none;}
+.menu                                 {width: auto; height: 56px; line-height: 56px; float: right; background-color: #fafafa; padding-top:  1.5%;
+                                      display: block !important; position: static;}
+.menu li                              {padding: 0; float: left;}
+.menu li a                            {color:#130400; font-size: 1em; padding: 15px;}
+.menu li a:hover                      {border: none; color:#da6709;} 
+.missao                               {margin-right: 2%;}
+.visao                                {margin-right: 2%; margin-left: 3%}
+.valores                              {margin-right: 2%;}
+                                      }
