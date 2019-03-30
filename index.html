@@ -21,11 +21,11 @@
 		
 		<section id="home">
 			<header class="cabecalho container">
-			   <a href="index.html"><h1 class="logo"> Natal Projeto </h1></a>
+			   <a href="index.html"><h1 class="logo"> Natal Projetos </h1></a>
 			   <button class="btn-menu bg-gradient"><i class="fa fa-bars fa-lg"></i></button>
 			   <nav class="menu">
 				   <a class="btn-close"><i class="fa fa-times"></i></a>
-				   <ul>
+				   <ul id="top-menu">
 					  <li><a href="#home">Home</a></li>
 					  <li><a href="#servicos">Serviços</a></li>
 					  <li><a href="#quemsomos">Quem somos</a></li>
@@ -53,7 +53,8 @@
 <!-- SERVIÇOS --> 
 			
 		<div class="cima">
-			<section id="servicos"><h1>SERVIÇOS</h1></section>
+			<a class="anchor" id="servicos"></a>
+			<section><h1>SERVIÇOS</h1></section>
 		</div>
 		<div class="primeiro">	
 			<div class="swiper-container">
@@ -82,9 +83,9 @@
 						<article class="fica">
 							<a href="#"><img src="img/laudos.jpg" alt="Laudos Técnicos"></a>
 							<div class="inner">
-								<a href="#"> Laudos Técnicos </a>
+								<a href="#"> Elaboração de Laudos Técnicos </a>
 								<h4> Aterramento e SPDA </h4>
-								<p>O laudo de inspeção trata-se de documento técnico, com registro das inspeções, verificações e medições realizadas no sistema de proteção contra descargas atmosféricas (SPDA) e também do sistema de aterramento elétrico.kkjhgkjgkfjhgssssssssss  sssssssss sss  sssssf </p>
+								<p>O laudo de inspeção trata-se de documento técnico, com registro das inspeções, verificações e medições realizadas no sistema de proteção contra descargas atmosféricas (SPDA) e também do sistema de aterramento elétrico.kkjhgkjgkfjhgssssssssss  sssssssss sss </p>
 							</div>
 						</article>
 					</div>
@@ -127,12 +128,13 @@
     				<div class="swiper-button-prev"></div>	
 		
 		</div>	
-					<div class="swiper-pagination"></div>
+					
 		
 <!--  QUEM SOMOS -->
 		
         <div class="cima">
-			<section id="quemsomos"><h1>QUEM SOMOS</h1></section>
+			<a class="anchor" id="quemsomos"></a>
+			<section><h1>QUEM SOMOS</h1></section>
 		</div> 
 		<div class="dois">	
         	<div class="quemsomos">
@@ -165,7 +167,8 @@
 <!-- PARCEIROS --> 
 		
         <div class="cima">
-			<section id="parceiros"><h1>PARCEIROS</h1></section>
+			<a class="anchor" id="parceiros"></a>
+			<section><h1>PARCEIROS</h1></section>
 		</div>
 		<div class="tres">	
        		<article class="servico1 bg-white radius">
@@ -205,7 +208,8 @@
 <!-- CONTATOS -->
 		
 		<div class="cima">
-			<section id="contatos"> <h1>CONTATOS</h1></section>
+			<a class="anchor" id="contatos"></a>
+			<section> <h1>CONTATOS</h1></section>
 		</div>  
 		<div class="quatro">
         	<div class="pe">
@@ -286,6 +290,65 @@
 				  loopFillGroupWithBlank: true, pagination: {el: '.swiper-pagination', clickable: true,},
 				  navigation: {nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev',},
 				});	 
+			
+			
+			// Cache selectors
+			var lastId,
+				topMenu = $("#top-menu"),
+				topMenuHeight = topMenu.outerHeight()+78,
+				// All list items
+				menuItems = topMenu.find("a"),
+				// Anchors corresponding to menu items
+				scrollItems = menuItems.map(function(){
+				  var item = $($(this).attr("href"));
+				  if (item.length) { return item; }
+				});
+
+			// Bind click handler to menu items
+			// so we can get a fancy scroll animation
+			menuItems.click(function(e){
+			  var href = $(this).attr("href"),
+				  offsetTop = href === "#" ? 0 : $(href).offset().top-topMenuHeight+1;
+			  if(href != "#home") {
+				  $(".cabecalho").addClass("bg");
+			  } else {
+				  $(".cabecalho").removeClass("bg");
+			  }
+			  $('html, body').stop().animate({ 
+				  scrollTop: offsetTop
+			  }, 300);
+			  e.preventDefault();
+			});
+
+			// Bind to scroll
+			$(window).scroll(function(){
+			   // Get container scroll position
+			   var fromTop = $(this).scrollTop()+topMenuHeight;
+
+			   // Get id of current scroll item
+			   var cur = scrollItems.map(function(){
+				 if ($(this).offset().top < fromTop)
+				   return this;
+			   });
+			   // Get the id of the current element
+			   cur = cur[cur.length-1];
+			   var id = cur && cur.length ? cur[0].id : "";
+				
+			  console.log(id);
+			  if(id != "home") {
+				  $(".cabecalho").addClass("bg");
+			  } else {
+				  $(".cabecalho").removeClass("bg");
+			  }
+
+			   if (lastId !== id) {
+				   lastId = id;
+				   // Set/remove active class
+				   menuItems
+					 .parent().removeClass("active")
+					 .end().filter("[href='#"+id+"']").parent().addClass("active");
+			   }                   
+			});
 		</script>
 	</body>
 </html>
